@@ -142,32 +142,7 @@ function updatetotal() {
 }
 
 //Local Storage
-/*
-function addLocalStorage() {
-  localStorage.setItem('Carrito', cart);
 
-}
-window.onload = function(){
-  const storage = JSON.parse(localStorage.getItem('carrito'));
-  if(storage){
-    cart = storage;
-    renderCarrito();
-  }
-}
-let carrito = [];
-
-
-let arreglo_JSON = JSON.stringify(carrito);
-localStorage.setItem("carrito" , arreglo_JSON);
-
-function savelocalstorage(){
-  let cartContentList = document.getElementById('itemstorage');
-  localStorage.setItem("Carrito", cartContentList.outerHTML).value;
-}
- //load from local storage
-function loadlocalstorage(){
-  document.getElementById("itemstorage").outerHTML = localStorage.getItem("Carrito");
-}*/
 function addLocalStorage(){
   let addProductToCart = document.getElementById('itemstorage');
   localStorage.setItem("Carrito", addProductToCart.outerHTML);
