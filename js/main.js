@@ -59,7 +59,7 @@ function buyButtonClicked() {
     cartContent.removeChild(cartContent.firstChild);
   }
   updatetotal();
-  addLocalStorage()
+
 }
 
 // Removes items del carro
@@ -85,6 +85,7 @@ function addCartClicked(event) {
   let productImg = shopProducts.getElementsByClassName("product-img")[0].src;
   addProductToCart(title, price, productImg);
   updatetotal();
+  addLocalStorage();
 }
 function addProductToCart(title, price, productImg) {
   let cartShopBox = document.createElement("div");
@@ -100,6 +101,7 @@ function addProductToCart(title, price, productImg) {
       });
       return;
     }
+    addLocalStorage();
   }
   let cartBoxContent = `
                         <img src="${productImg}" alt="" class="cart-img">
@@ -140,22 +142,24 @@ function updatetotal() {
 }
 
 //Local Storage
+/*
 function addLocalStorage() {
-  localStorage.setItem('Carrito', boxProduct);
+  localStorage.setItem('Carrito', cart);
 
 }
 window.onload = function(){
   const storage = JSON.parse(localStorage.getItem('carrito'));
   if(storage){
-    carrito = storage;
+    cart = storage;
     renderCarrito();
   }
-}/*
+}
 let carrito = [];
 
 
 let arreglo_JSON = JSON.stringify(carrito);
 localStorage.setItem("carrito" , arreglo_JSON);
+
 function savelocalstorage(){
   let cartContentList = document.getElementById('itemstorage');
   localStorage.setItem("Carrito", cartContentList.outerHTML).value;
@@ -163,5 +167,8 @@ function savelocalstorage(){
  //load from local storage
 function loadlocalstorage(){
   document.getElementById("itemstorage").outerHTML = localStorage.getItem("Carrito");
+}*/
+function addLocalStorage(){
+  let addProductToCart = document.getElementById('itemstorage');
+  localStorage.setItem("Carrito", addProductToCart.outerHTML);
 }
-*/
