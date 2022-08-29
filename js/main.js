@@ -147,3 +147,28 @@ function addLocalStorage(){
   let addProductToCart = document.getElementById('itemstorage');
   localStorage.setItem("Carrito", addProductToCart.outerHTML);
 }
+
+let climaContainer = document.getElementById("clima-conteiner")
+let apiClima = `https://api.openweathermap.org/data/2.5/weather?q=Comodoro Rivadavia&units=metric&appid=4b56f215333470bc78211cf09c98602e` 
+const pedirData = async () => {
+	let clima = []
+	let soleado = []
+let variableFetch = await fetch(apiClima)
+let dataFetch = await variableFetch.json()
+clima.push(dataFetch.main.temp)
+soleado.push(dataFetch.name)
+//console.log(dataFetch)
+console.log(dataFetch)
+console.log(clima)
+console.log(soleado)
+
+clima.forEach(dataFetch => {
+	const p = document.createElement("p")
+
+	p.innerHTML = `<p>La Temperatura es: <span class="span"> &#127777 </span> ${JSON.stringify(clima)}° en la ciudad de <span class="span"> &#128205 </span> ${JSON.stringify(soleado)} </p>`
+
+	climaContainer.appendChild(p)
+
+})
+
+}

@@ -230,3 +230,8 @@ header {
     width: 280px;
   }
 }
+.clima{
+  text-align: center;
+  position: relative;
+  top: 6rem;
+}
